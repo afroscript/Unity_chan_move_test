@@ -1,5 +1,4 @@
-﻿//まだ改造してない。TextToSpeachをコピペしたのみ！(6行目だけ追加！)
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using IBM.Watson.DeveloperCloud.Services.TextToSpeech.v1;
@@ -14,8 +13,6 @@ public class SayHello : MonoBehaviour {
 	[SerializeField]
 	TextToSpeech m_TextToSpeech = new TextToSpeech();
 	string m_ResString = "おはよう";
-	//	string m_TestString = "録音できてないですよ〜";
-	//	private AudioClip m_AudioClip = new AudioClip();
 	private SpeechToText m_SpeechToText = new SpeechToText();
 
 	IEnumerator Start() {
