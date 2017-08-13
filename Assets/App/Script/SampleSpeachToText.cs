@@ -26,6 +26,7 @@ public class SampleSpeachToText : MonoBehaviour {
 		audioSource.Play ();
 
 		// 音声をテキストに変換
+		m_SpeechToText.RecognizeModel = "ja-JP_BroadbandModel";
 		m_SpeechToText.Recognize(audioSource.clip, HandleOnRecognize);
 	}
 		
