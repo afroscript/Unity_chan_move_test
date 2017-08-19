@@ -4,52 +4,66 @@
 //using IBM.Watson.DeveloperCloud.Services.TextToSpeech.v1;
 //using IBM.Watson.DeveloperCloud.Services.SpeechToText.v1;
 //
-//public class SayHello : MonoBehaviour {
-//
-//	public static void aaa() {
-//		Debug.Log ("aaa");
-//	}
+//public class WWatsonConversation : MonoBehaviour {
 //
 //	[SerializeField]
+//	SpeechToText m_SpeechToText = new SpeechToText();
 //	TextToSpeech m_TextToSpeech = new TextToSpeech();
 //	string m_ResString = "おはよう";
-//	private SpeechToText m_SpeechToText = new SpeechToText();
 //
-//	IEnumerator Start() {
-//		// 音声をマイクから3秒間取得
-//		Debug.Log ("Start record");
+//	private Animator animator;
+//	private const string key_isGoodMorning = "isGoodMorning";
+//
+//	// Use this for initialization
+//	void Start() {
+//		
+//	}
+//
+//	// Update is called once per frame
+//	void Update () {
 //		var audioSource = GetComponent<AudioSource>();
+//		StartCoroutine (RecMic(audioSource));
+////		Debug.Log ("loglogloglogloglgo");
+//	}
+//
+//	IEnumerator RecMic(AudioSource audioSource) { // 音声をマイクから取得
+//		Debug.Log ("Start record");
 //		audioSource.clip = Microphone.Start(null, true, 10, 44100);
 //		audioSource.loop = false;
 //		audioSource.spatialBlend = 0.0f;
-//		yield return new WaitForSeconds (4f);
+//		yield return new WaitForSeconds (2f);
 //		Microphone.End (null);
 //		Debug.Log ("Finish record");
 //
-//		// ためしに録音内容を再生してみる
-//		audioSource.Play ();
+//		//audioSource.Play ();
 //
-//		// 音声をテキストに変換
+//		// 音声の認識言語を日本語に指定
 //		m_SpeechToText.RecognizeModel = "ja-JP_BroadbandModel";
+//		// 音声をテキストに変換し、関数：HandleOnRecognize()を呼ぶ
 //		m_SpeechToText.Recognize(audioSource.clip, HandleOnRecognize);
 //
 //	}
 //
 //	void HandleOnRecognize(SpeechRecognitionEvent result){
-//		if (result != null && result.results.Length > 0){
-//			foreach (var res in result.results){
-//				foreach (var alt in res.alternatives){
+//		if (result != null && result.results.Length > 0) {
+//			foreach (var res in result.results) {
+//				foreach (var alt in res.alternatives) {
 //					string text = alt.transcript;
-//					Debug.Log(string.Format("{0} ({1}, {2:0.00})\n", text, res.final ? "Final" : "Interim", alt.confidence));
+//					Debug.Log (string.Format ("{0} ({1}, {2:0.00})\n", text, res.final ? "Final" : "Interim", alt.confidence));
 //
 //					//textに"おはよう"があれば、おはようと返すしてしゃべる
-//					if (text.Contains("おはよう")) {
+//					if (text.Contains ("おはよう")) {
 //						m_TextToSpeech.Voice = VoiceType.ja_JP_Emi; //音声タイプを指定
-//						m_TextToSpeech.ToSpeech(m_ResString, HandleToSpeechCallback);
-//
+//						m_TextToSpeech.ToSpeech (m_ResString, HandleToSpeechCallback);
+//						//ここにモーションを入れてる
+//						this.animator.SetBool (key_isGoodMorning, true);
+//					} else {
+//						this.animator.SetBool(key_isGoodMorning, false);
 //					}
 //				}
 //			}
+//		} else {
+//			Debug.Log ("何も聞き取ってくれないときもある");
 //		}
 //	}
 //
@@ -69,11 +83,5 @@
 //			GameObject.Destroy(audioObject, clip.length);
 //		}
 //	}
-//
-//
-//
-//	// Update is called once per frame
-//	//	void Update () {
-//	//		
-//	//	}
+//		
 //}
