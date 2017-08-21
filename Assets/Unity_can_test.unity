@@ -277,15 +277,15 @@ Prefab:
       objectReference: {fileID: 9100000, guid: 0dad8f948a1e7478fa41ce95fb1eec00, type: 2}
     - target: {fileID: 400326, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2729484
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400326, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2729477
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400326, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2729477
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400328, guid: 8f0565f23a2b58541a475bd3c1393052, type: 3}
       propertyPath: m_LocalPosition.y
@@ -447,8 +447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78c57f082572f4df4b199dc600ac250d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ResString: e3818ae381afe38288e38186
-  animator: {fileID: 0}
 --- !u!114 &1652702655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +543,7 @@ GameObject:
   - component: {fileID: 2053888047}
   - component: {fileID: 2053888046}
   - component: {fileID: 2053888045}
+  - component: {fileID: 2053888050}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -615,10 +614,21 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2053888044}
-  m_LocalRotation: {x: 0.022122981, y: -0.99973196, z: -0.00022062812, w: -0.006829294}
-  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalRotation: {x: 0.009667659, y: -0.999328, z: -0.033650093, w: 0.010852004}
+  m_LocalPosition: {x: 0, y: 1, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0.043, y: -180.782, z: -2.535}
+  m_LocalEulerAnglesHint: {x: -3.844, y: -178.71701, z: -1.1520001}
+--- !u!114 &2053888050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053888044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18582f193b5134f28af3d9ac2ee74466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

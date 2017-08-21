@@ -17,11 +17,12 @@ public class WatsonConversation : MonoBehaviour {
 
 	// Use this for initialization
 	IEnumerator Start() {
+
 		this.animator = GetComponent<Animator>();
 		var audioSource = GetComponent<AudioSource>();
 		var n = 3;
 		while (n > 0) {
-			Debug.Log ("Start()がスタート" + n);
+			Debug.Log (n + "回目");
 			yield return RecMic(audioSource);
 			n--;
 		}
@@ -59,6 +60,7 @@ public class WatsonConversation : MonoBehaviour {
 						m_TextToSpeech.ToSpeech (m_ResString, HandleToSpeechCallback);
 						//ここにモーションを入れてる
 						this.animator.SetBool (key_isGoodMorning, true);
+
 					} else {
 //						this.animator.SetBool(key_isGoodMorning, false);
 					}
