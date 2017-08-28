@@ -18,6 +18,14 @@
             "m_Password": "LhdZFpGOAZie",
             "m_Apikey": null,
             "m_Note": null
+        },
+        {
+            "m_ServiceID": "ConversationV1",
+            "m_URL": "https://gateway.watsonplatform.net/conversation/api",
+            "m_User": "e8e18fa9-2013-4473-8655-5cc21acea54d",
+            "m_Password": "IDx8W1i5SbFr",
+            "m_Apikey": null,
+            "m_Note": null
         }
     ],
     "m_Variables": []
